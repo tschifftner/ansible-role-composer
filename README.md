@@ -1,11 +1,12 @@
-# Ansible Role: Install Java
+# Ansible Role: Install Composer
 
-[![Build Status](https://travis-ci.org/tschifftner/ansible-role-java.svg)](https://travis-ci.org/tschifftner/ansible-role-java)
+[![Build Status](https://travis-ci.org/tschifftner/ansible-role-composer.svg)](https://travis-ci.org/tschifftner/ansible-role-composer)
 
-Installs java on Debian/Ubuntu linux servers.
+Installs composer on Debian/Ubuntu linux servers.
 
 ## Requirements
 
+PHP must be installed prior to running this role!
 ansible 1.8+
 
 ## Role Variables
@@ -13,8 +14,8 @@ ansible 1.8+
 Available variables are listed below, along with default values (see `defaults/main.yml`):
 
 ```
-java_packages:
-  - openjdk-7-jdk
+composer_selfupdate: true
+composer_selfupdate_specialtime: weekly
 ```
 
 ## Dependencies
@@ -24,28 +25,22 @@ None.
 ## Installation
 
 ```
-$ ansible-galaxy install tschifftner.java
+$ ansible-galaxy install tschifftner.composer
 ```
 
 ## Example Playbook
 
     - hosts: server
       roles:
-        - { role: tschifftner.java }
+        - { role: tschifftner.composer }
 
 ## Supported OS
-Ansible          | Debian Jessie    | Ubuntu 14.04
-Ansible          | Debian Jessie    | Ubuntu 14.04
-:--------------: | :--------------: | :-------------:
-1.8              | Yes              | Yes
-1.9              | Yes              | Yes
-
 ## Supported OS
-Ansible          | Debian | Ansible          | Debian Jessie    | Ubuntu 14.04
-Ansible          | Debian Jessie    | Ubuntu 14.04 | Ansible          | Debian Jessie    | Ubuntu 14.04
-:--------------: | :--------------: | :-------------: | :--------------: | :--------------: | :-------------:
-1.8              | Yes              | Yes | 1.8              | Yes              | Yes
-1.9              | Yes              | Yes | 1.9              | Yes              | Yes
+Ansible          | Debian Jessie    | Ubuntu 14.04    | Ubuntu 12.04
+:--------------: | :--------------: | :-------------: | :-------------: 
+1.8              | Yes              | Yes             | Yes
+1.9              | Yes              | Yes             | Yes
+2.0              | Yes              | Yes             | Yes
 
 
 ## License
