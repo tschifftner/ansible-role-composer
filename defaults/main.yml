@@ -1,3 +1,4 @@
 ---
 composer_selfupdate: true
 composer_selfupdate_specialtime: weekly
+composer_install_path: '/usr/local/bin/composer'
