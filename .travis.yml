@@ -6,7 +6,7 @@ sudo: required
 env:
   - SITE=test.yml ANSIBLE_VERSION=1.8
   - SITE=test.yml ANSIBLE_VERSION=1.9.4
-  - SITE=test.yml ANSIBLE_VERSION=2.0.0.1
+  - SITE=test.yml ANSIBLE_VERSION=2.0.1.0
 
 before_install:
   - sudo apt-get update -qq
@@ -45,6 +45,12 @@ script:
     composer --version
     && (echo 'Composer is installed' && exit 0)
     || (echo 'Composer is not installed' && exit 1)
+
+  # Check if self-update cronjob exists
+  - >
+    test -e /etc/cron.d/composer
+    && (echo 'cronjob is installed: pass' && exit 0)
+    || (echo 'cronjob is installed: fail' && exit 1)
 
 notifications:
   slack: ambimax:2MlPTX9bY9aPxCPhJGxHKIT6

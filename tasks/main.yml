@@ -35,4 +35,5 @@
     job: '{{ composer_install_path }} self-update >> /var/log/composer.log'
     user: root
     state: present
+    cron_file: 'composer'
   when: composer_selfupdate

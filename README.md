@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/tschifftner/ansible-role-composer.svg)](https://travis-ci.org/tschifftner/ansible-role-composer)
 
-Installs composer on Debian/Ubuntu linux servers.
+Installs composer on Debian/Ubuntu linux servers. Installs cronjob to sel-update
 
 ## Requirements
 
