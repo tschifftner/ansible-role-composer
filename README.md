@@ -7,7 +7,7 @@ Installs composer on Debian/Ubuntu linux servers. Installs cronjob to sel-update
 ## Requirements
 
 PHP must be installed prior to running this role!
-ansible 1.8+
+ansible 2.0+
 
 ## Role Variables
 
@@ -38,9 +38,8 @@ $ ansible-galaxy install tschifftner.composer
 ## Supported OS
 Ansible          | Debian Jessie    | Ubuntu 14.04    | Ubuntu 12.04
 :--------------: | :--------------: | :-------------: | :-------------: 
-1.8              | Yes              | Yes             | Yes
-1.9              | Yes              | Yes             | Yes
 2.0              | Yes              | Yes             | Yes
+2.1              | Yes              | Yes             | Yes
 
 
 ## License
