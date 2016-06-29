@@ -5,7 +5,8 @@
   ignore_errors: true
   changed_when: false
 
-- fail:
+- name: 'fail when php is not installed'
+  fail:
     msg: 'PHP needs to be installed before!'
   when: composer_phpcheck | failed
 
