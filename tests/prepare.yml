@@ -3,11 +3,21 @@
   remote_user: root
 
   pre_tasks:
-    - name: Install required packages for testing
+    - name: Install cron
       apt:
-        pkg: '{{ item }}'
+        pkg: cron
         state: present
         update_cache: yes
-      with_items:
-        - cron
-        - php
+
+    - name: Install php on most OS
+      apt:
+        pkg: php
+      ignore_errors: true
+      when: >
+        (ansible_distribution == 'Ubuntu') or
+        (ansible_distribution == 'Debian' and ansible_distribution_version|int >= 9)
+
+    - name: Install php on debian 8
+      apt:
+        pkg: php5
+      when: (ansible_distribution == 'Debian' and ansible_distribution_version|int == 8)
