@@ -33,6 +33,11 @@ script:
   # Check if self-update cronjob exists
   - test -e /etc/cron.d/composer
 
+after_failure:
+  - ls -la /etc/cron.d/
+  - cat /etc/cron.d/composer
+  - crontab -l
+
 notifications:
   slack: ambimax:2MlPTX9bY9aPxCPhJGxHKIT6
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
