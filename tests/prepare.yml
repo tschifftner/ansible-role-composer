@@ -1,0 +1,13 @@
+---
+- hosts: localhost
+  remote_user: root
+
+  pre_tasks:
+    - name: Install required packages for testing
+      apt:
+        pkg: cron
+        state: present
+        update_cache: yes
+      with_items:
+        - cron
+        - php

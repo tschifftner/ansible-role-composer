@@ -8,7 +8,7 @@
 - name: 'fail when php is not installed'
   fail:
     msg: 'PHP needs to be installed before!'
-  when: composer_phpcheck | failed
+  when: composer_phpcheck is failed
 
 - name: Download composer installer
   get_url:

@@ -1,13 +1,12 @@
 # Ansible Role: Install Composer
 
-[![Build Status](https://travis-ci.org/tschifftner/ansible-role-composer.svg)](https://travis-ci.org/tschifftner/ansible-role-composer)
+[![Build Status](https://travis-ci.org/tschifftner/ansible-role-composer.svg?branch=master)](https://travis-ci.org/tschifftner/ansible-role-composer)
 
 Installs composer on Debian/Ubuntu linux servers. Installs cronjob to sel-update
 
 ## Requirements
 
 PHP must be installed prior to running this role!
-ansible 2.0+
 
 ## Role Variables
 
@@ -35,12 +34,15 @@ $ ansible-galaxy install tschifftner.composer
         - { role: tschifftner.composer }
 
 ## Supported OS
-## Supported OS
-Ansible          | Debian Jessie    | Ubuntu 14.04    | Ubuntu 12.04
-:--------------: | :--------------: | :-------------: | :-------------: 
-2.0              | Yes              | Yes             | Yes
-2.1              | Yes              | Yes             | Yes
 
+ - Debian 9 (Stretch)
+ - Debian 8 (Jessie)
+ - Ubuntu 18.04 (Bionic Beaver)
+ - Ubuntu 16.04 (Xenial Xerus)
+ 
+## Required ansible version
+
+Ansible 2.5+
 
 ## License
 
