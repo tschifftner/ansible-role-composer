@@ -31,12 +31,12 @@ script:
   - ${DOCKER} composer --version
 
   # Check if self-update cronjob exists
-  - test -e /etc/cron.d/composer
+  - ${DOCKER} test -e /etc/cron.d/composer
 
 after_failure:
-  - ls -la /etc/cron.d/
-  - cat /etc/cron.d/composer
-  - crontab -l
+  - ${DOCKER} ls -la /etc/cron.d/
+  - ${DOCKER} cat /etc/cron.d/composer
+  - ${DOCKER} crontab -l
 
 notifications:
   slack: ambimax:2MlPTX9bY9aPxCPhJGxHKIT6
