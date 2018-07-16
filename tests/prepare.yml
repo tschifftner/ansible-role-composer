@@ -5,7 +5,7 @@
   pre_tasks:
     - name: Install required packages for testing
       apt:
-        pkg: cron
+        pkg: '{{ item }}'
         state: present
         update_cache: yes
       with_items:
